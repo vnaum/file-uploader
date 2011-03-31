@@ -447,7 +447,7 @@ qq.FileUploaderBasic.prototype = {
         return name;
     },
     _isAllowedExtension: function(fileName){
-        var allowed = this._options.allowedExtensions;
+        var allowed = this._options.allowedExtensions.map(function(n){return '.' + n});
         var lcaseFn = fileName.toLowerCase();
         
         if (!allowed.length){return true;}        
